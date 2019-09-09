@@ -3,7 +3,8 @@ description: A new Flutter project.
 
 dependencies:
 
-  cloud_firestore: ^0.7.3 
+  cloud_firestore: ^0.12.3
+#  firebase_core: ^0.3.4
   flutter:
     sdk: flutter
 

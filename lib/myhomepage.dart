@@ -12,7 +12,7 @@ class MyHomePage extends StatelessWidget {
     return new Scaffold(
       appBar: new AppBar(title: new Text(title)),
       body: new StreamBuilder(
-          stream: Firestore.instance.collection('users').snapshots(),
+          stream: Firestore.instance.collection('items').document('simplelogin:193').collection('items').snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) return const Text('Loading...');
             return new ListView.builder(
@@ -21,7 +21,7 @@ class MyHomePage extends StatelessWidget {
               itemExtent: 25.0,
               itemBuilder: (context, index) {
                 DocumentSnapshot ds = snapshot.data.documents[index];
-                return new Text(" ${ds['uid']} ${ds['description']}");
+                return new Text(" ${ds['itemid']} ${ds['description']}");
               }
             );
           }),
